@@ -1,0 +1,25 @@
+{
+    "id": "setup-user",
+    "name": "Setup user configs",
+    "containerEnv": {
+        "RUBY_HOME": "/usr/local/rvm/rubies/default",
+        "JAVA_ROOT": "/home/vscode/java",
+        "NODE_ROOT": "/home/vscode/nvm",
+        "PHP_ROOT": "/home/vscode/.php",
+        "PYTHON_ROOT": "/home/vscode/.python",
+        "RUBY_ROOT": "/home/vscode/.ruby",
+        "MAVEN_ROOT": "/home/vscode/.maven",
+        "HUGO_ROOT": "/home/vscode/.hugo",
+        "DOTNET_SKIP_FIRST_TIME_EXPERIENCE": "1",
+        "NUGET_XMLDOC_MODE": "skip",
+        "ORYX_ENV_TYPE": "vsonline-present",
+        "PYTHONIOENCODING": "UTF-8",
+        "NPM_GLOBAL": "/home/vscode/.npm-global",
+        "NVS_HOME": "/home/vscode/.nvs",
+        "RVM_PATH": "/usr/local/rvm",
+        "RAILS_DEVELOPMENT_HOSTS": ".githubpreview.dev,.preview.app.github.dev,.app.github.dev",
+        "GOROOT": "/usr/local/go",
+        "JUPYTERLAB_PATH": "/home/vscode/.local/bin",
+        "PATH": "/home/vscode/.dotnet:/home/vscode/nvm/current/bin:/home/vscode/.php/current/bin:/home/vscode/.python/current/bin:/home/vscode/java/current/bin:/home/vscode/.ruby/current/bin:/home/vscode/.local/bin:${PATH}"
+    }
+}

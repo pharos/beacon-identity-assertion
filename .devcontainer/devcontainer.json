@@ -1,0 +1,60 @@
+{
+  // The base image for the Dev Container MUST be the primary language
+  //   https://github.com/devcontainers/images
+  // Additional support languages such as Node, Python, etc. can be added
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+  },
+  "overrideFeatureInstallOrder": [
+    "ghcr.io/devcontainers/features/docker-outside-of-docker"
+
+  ],
+  "postStartCommand": {
+    "script": "./.devcontainer/postStartCommand.sh"
+  },
+  "remoteUser": "vscode",
+  "containerUser": "vscode",
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+    "source=${containerWorkspaceFolderBasename}-home,target=/home/vscode,type=volume"
+  ],
+  "runArgs": ["--memory=4gb", "--cpus=4", "--hostname=${containerWorkspaceFolderBasename}"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.debugpy",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "anweber.httpbook",
+        "streetsidesoftware.code-spell-checker",
+        "github.copilot",
+        "github.copilot-chat",
+        "shardulm94.trailing-spaces",
+        "gitlab.gitlab-workflow",
+        "jasonn-porch.gitlab-mr",
+        "redhat.vscode-yaml"
+      ],
+      "settings": {
+        "trustedDomains": [
+          "https://github.com"
+        ],
+        "settings": {
+          "python.defaultInterpreterPath": "/usr/bin/python3"
+        },
+        "editor.tabSize": 4,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          },
+          "zsh": {
+            "path": "zsh"
+          }
+        }
+      }
+    }
+  }
+}

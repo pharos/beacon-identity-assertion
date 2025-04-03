@@ -1,0 +1,2 @@
+assertion_key,assertion_value,name,given_name,family_name,middle_name,nickname,preferred_username,email
+"urn:identity:assertion:card","1234567890",Wile E. Coyote,Wile,Coyote,E,,,wilie.e.coyote@acme.com

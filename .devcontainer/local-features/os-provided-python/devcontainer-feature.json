@@ -1,0 +1,6 @@
+{
+    "name": "OS Provided Python",
+    "id": "os-provided-python",
+    "version": "0.0.1",
+    "description": "A feature to ensure python is installed from binaries"
+}

@@ -1,0 +1,23 @@
+sequenceDiagram
+    autonumber
+    Client->>+Pharos Cloud STS: Verify assertion
+    alt External Identity Assertion Configured
+
+        loop Fetch public key if required
+            note left of Identity Assertion Endpoint: Signing certificate is fetched<br/>from the Pharos Cloud STS periodically<br/>or when not found
+            Identity Assertion Endpoint->>Pharos Cloud STS: Public key Request
+            Pharos Cloud STS-->>Identity Assertion Endpoint: Public key Response
+        end
+
+        Pharos Cloud STS->>+Identity Assertion Endpoint: Assertion Request
+
+        Identity Assertion Endpoint-->Identity Assertion Endpoint: verify the integrity of the request body
+        Identity Assertion Endpoint-->Identity Assertion Endpoint: validate the HTTP signature
+        Identity Assertion Endpoint-->Identity Assertion Endpoint: process assertion request
+
+        Identity Assertion Endpoint-->>-Pharos Cloud STS: Assertion Response
+
+    else No External Identity Assertion Configured
+        Pharos Cloud STS-->>Pharos Cloud STS: Verify assertion
+    end
+    Pharos Cloud STS-->>-Client: Verified assertion
