@@ -27,7 +27,7 @@ PyJWT>=2,<3
 python-dotenv==0.17.1
 python-multipart==0.0.7
 PyYAML>=5.4.1,<6.1.0
-requests==2.32.0
+requests==2.32.4
 Rx==1.6.1
 starlette>=0.40,<0.42
 typing-extensions==4.8.0
